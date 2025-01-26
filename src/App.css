@@ -26,16 +26,44 @@ body {
   justify-content: center;
   gap: 2.5rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  transition: transform 0.3s ease;
   z-index: 1000;
 }
 
-.navbar.hidden {
-  transform: translateY(-100%);
+/* Desktop styles - fixed navbar */
+@media (min-width: 769px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .navbar.hidden {
+    transform: translateY(-100%);
+  }
+
+  body {
+    padding-top: 60px; /* Adjust this value to match your navbar height */
+  }
+}
+
+/* Mobile styles - static navbar */
+@media (max-width: 768px) {
+  .navbar {
+    position: static;
+    flex-direction: column;
+    padding: 0.8rem;
+    gap: 1rem;
+  }
+
+  body {
+    padding-top: 0; /* Remove padding on mobile */
+  }
+
+  .navbar.hidden {
+    transform: none; /* Disable hiding on mobile */
+  }
 }
 
 .navbar a {
