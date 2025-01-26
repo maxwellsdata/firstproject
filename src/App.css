@@ -724,3 +724,65 @@ h1, h2, h3 {
     padding: 1.5rem;
   }
 }
+
+/* Dark mode variables */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --card-bg: #ffffff;
+  --nav-bg: #1e3a5f;
+  --card-border: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+  --card-bg: #2d2d2d;
+  --nav-bg: #0f1c2e;
+  --card-border: rgba(255, 255, 255, 0.1);
+}
+
+/* Apply variables */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.navbar {
+  background-color: var(--nav-bg);
+}
+
+.content-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+}
+
+/* Theme toggle button styles */
+.theme-toggle {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Dark mode specific styles */
+.dark-mode {
+  .content-card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-content {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
