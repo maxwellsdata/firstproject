@@ -2,8 +2,8 @@ import React from 'react';
 
 function Home() {
   return (
-    <div className="home-page">
-      <h1>Welcome to Men's Bible Study</h1>
+    <div className="home-container">
+      <h1>Monday Night Group</h1>
       <div className="content">
         <section className="about-section">
           <h2>Who We Are</h2>
