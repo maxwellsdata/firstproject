@@ -1,19 +1,32 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 import { FaMoon, FaSun } from 'react-icons/fa';
 
 function Navbar() {
   const { isDarkMode, toggleDarkMode } = useTheme();
-  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  // Prevent duplicate links
+  const links = [
+    { path: '/', text: 'Home' },
+    { path: '/get-plugged-in', text: 'Get Plugged In' },
+    { path: '/resources', text: 'Resources' },
+    { path: '/calendar', text: 'Calendar' },
+    { path: '/partnerships', text: 'Partnerships' }
+  ];
 
   return (
     <nav className="navbar">
-      <Link to="/">Home</Link>
-      <Link to="/get-plugged-in">Get Plugged In</Link>
-      <Link to="/resources">Resources</Link>
-      <Link to="/calendar">Calendar</Link>
-      <Link to="/partnerships">Partnerships</Link>
+      {links.map((link) => (
+        <Link 
+          key={link.path}
+          to={link.path}
+          className={location.pathname === link.path ? 'active' : ''}
+        >
+          {link.text}
+        </Link>
+      ))}
       <button 
         className="theme-toggle" 
         onClick={toggleDarkMode}
