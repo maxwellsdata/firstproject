@@ -11,10 +11,13 @@ body {
   color: #2c3e50;
   background-color: #f5f7fa;
   padding-top: 60px; /* Adjust this value to match your navbar height */
+  margin: 0;
+  padding: 0;
 }
 
 .App {
   min-height: 100vh;
+  margin-top: 0;
 }
 
 /* Modern Navigation Bar */
@@ -26,9 +29,10 @@ body {
   align-items: center;
   gap: 2.5rem;
   position: relative;
+  margin: 0;
+  width: 100%;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   z-index: 1000;
-  margin-top: 0; /* Ensure no top margin */
 }
 
 /* Desktop styles - fixed navbar */
@@ -53,11 +57,10 @@ body {
 /* Mobile styles - static navbar */
 @media (max-width: 768px) {
   .navbar {
-    position: static;
     flex-direction: column;
-    padding: 0.8rem;
+    padding: 1rem;
     gap: 1rem;
-    margin: 0; /* Remove any margin */
+    margin-top: 0;
   }
 
   body {
@@ -77,8 +80,6 @@ body {
     position: static;
     transform: none;
     margin: 0.5rem 0;
-    font-size: 1.4rem;
-    padding: 10px;
   }
   
   .theme-toggle:hover {
