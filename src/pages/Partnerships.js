@@ -45,7 +45,7 @@ function Partnerships() {
                 rel="noopener noreferrer"
                 className="donate-button"
               >
-                Donate to Save a Child Here
+                Donate to Save a Child
               </a>
             </div>
           </div>

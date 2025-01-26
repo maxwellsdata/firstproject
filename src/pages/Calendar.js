@@ -10,7 +10,7 @@ function Calendar() {
           <h2>Upcoming Events</h2>
           <div className="calendar-info">
             <p>Monday Night Group meets every Monday at 7:00 PM</p>
-            <p>Location: The Church at West Franklin</p>
+            <p>First Monday of each month we meet at Otter Creek Church (West End)</p>
           </div>
           
           {/* Placeholder for future calendar integration */}
