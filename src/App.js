@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useNavigate, Link } from 'react
 import './App.css';
 import app from './firebase';
 import { ThemeProvider } from './context/ThemeContext';
+import Navbar from './components/Navbar';
 
 // Import pages
 import Home from './pages/Home';
@@ -16,6 +17,7 @@ function App() {
     <ThemeProvider>
       <Router>
         <div className="App">
+          <Navbar />
           <nav className="navbar">
             <Link to="/">Home</Link>
             <Link to="/get-plugged-in">Get Plugged In</Link>

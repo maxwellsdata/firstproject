@@ -18,6 +18,11 @@ function Home() {
             Join us as we journey together in faith, supporting and encouraging 
             one another in our walk with Christ.
           </p>
+          <p className="casual-text">
+            Some would say "We're just a bunch of dudes in Nashville pursuing Christ". 
+            God has also led us to have a virtual group, that also meets on Monday nights 
+            and goes through the same study.
+          </p>
         </div>
 
         <div className="content-card">

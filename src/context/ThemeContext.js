@@ -16,11 +16,7 @@ export function ThemeProvider({ children }) {
   // Save theme preference when it changes
   useEffect(() => {
     localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
-    if (isDarkMode) {
-      document.body.classList.add('dark-mode');
-    } else {
-      document.body.classList.remove('dark-mode');
-    }
+    document.body.classList.toggle('dark-mode', isDarkMode);
   }, [isDarkMode]);
 
   const toggleDarkMode = () => {

@@ -15,27 +15,64 @@ function Resources() {
   ];
 
   return (
-    <div className="resources-page">
-      <h1>Resources</h1>
-      <div className="schedule-container">
-        <h2>Current Study: Book of Proverbs</h2>
-        <p className="schedule-intro">
-          Join us as we study through the Book of Proverbs. 
-          Each week, we'll explore the wisdom and practical guidance 
-          that these chapters offer for our daily lives.
-        </p>
-        <div className="reading-schedule">
-          <h3>Reading Schedule</h3>
-          <div className="schedule-grid">
-            {readingSchedule.map((week, index) => (
-              <div key={index} className="schedule-item">
-                <div className="date">{week.date}</div>
-                <div className="chapters">{week.chapters}</div>
-              </div>
-            ))}
+    <div className="resources-container">
+      <h1 className="page-title">Resources</h1>
+
+      {/* Primary Resources Section */}
+      <section className="resources-section">
+        <h2>Primary Resources</h2>
+        <div className="schedule-container">
+          <h2>Current Study: Book of Proverbs</h2>
+          <p className="schedule-intro">
+            Join us as we study through the Book of Proverbs. 
+            Each week, we'll explore the wisdom and practical guidance 
+            that these chapters offer for our daily lives.
+          </p>
+          <div className="reading-schedule">
+            <h3>Reading Schedule</h3>
+            <div className="schedule-grid">
+              {readingSchedule.map((week, index) => (
+                <div key={index} className="schedule-item">
+                  <div className="date">{week.date}</div>
+                  <div className="chapters">{week.chapters}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Secondary Resources Section */}
+      <section className="resources-section">
+        <h2>Additional Study Resources</h2>
+        <div className="resource-cards">
+          <div className="resource-card">
+            <h3>Enduring Word</h3>
+            <p>Free, comprehensive Bible commentary that's easy to use and organized chapter by chapter. Great for personal Bible study or lesson preparation.</p>
+            <a 
+              href="https://enduringword.com/bible-commentary/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="resource-link"
+            >
+              Access Commentary
+            </a>
+          </div>
+
+          <div className="resource-card">
+            <h3>The Gospel Coalition Courses</h3>
+            <p>Free online courses covering various biblical topics, including in-depth studies of Proverbs and other books of the Bible.</p>
+            <a 
+              href="https://www.thegospelcoalition.org/course/proverbs-courses/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="resource-link"
+            >
+              View Courses
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
