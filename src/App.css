@@ -27,6 +27,7 @@ body {
   gap: 2.5rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   z-index: 1000;
+  margin-top: 0; /* Ensure no top margin */
 }
 
 /* Desktop styles - fixed navbar */
@@ -55,10 +56,16 @@ body {
     flex-direction: column;
     padding: 0.8rem;
     gap: 1rem;
+    margin: 0; /* Remove any margin */
   }
 
   body {
-    padding-top: 0; /* Remove padding on mobile */
+    padding-top: 0; /* Remove top padding */
+    margin: 0; /* Remove any margin */
+  }
+
+  #root {
+    margin-top: 0; /* Ensure no top margin on root element */
   }
 
   .navbar.hidden {
@@ -651,4 +658,69 @@ button[type="submit"]:hover {
 /* Update general text colors */
 h1, h2, h3 {
   color: #1e3a5f;
+}
+
+/* Calendar page styles */
+.calendar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.page-title {
+  color: #1e3a5f;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.calendar-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.calendar-info {
+  margin-bottom: 2rem;
+}
+
+.calendar-info p {
+  color: #4a5568;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.calendar-placeholder {
+  background-color: #f7fafc;
+  border: 2px dashed #cbd5e0;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.calendar-placeholder p {
+  color: #718096;
+  margin-bottom: 1rem;
+}
+
+.calendar-placeholder p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .calendar-info p {
+    font-size: 1.1rem;
+  }
+  
+  .calendar-container {
+    padding: 1.5rem;
+  }
 }
