@@ -7,33 +7,32 @@ function Navbar() {
   const { isDarkMode, toggleDarkMode } = useTheme();
   const location = useLocation();
 
-  // Prevent duplicate links
-  const links = [
-    { path: '/', text: 'Home' },
-    { path: '/get-plugged-in', text: 'Get Plugged In' },
-    { path: '/resources', text: 'Resources' },
-    { path: '/calendar', text: 'Calendar' },
-    { path: '/partnerships', text: 'Partnerships' }
-  ];
-
   return (
     <nav className="navbar">
-      {links.map((link) => (
-        <Link 
-          key={link.path}
-          to={link.path}
-          className={location.pathname === link.path ? 'active' : ''}
-        >
-          {link.text}
+      <div className="nav-content">
+        <Link to="/" className={location.pathname === '/' ? 'nav-link active' : 'nav-link'}>
+          Home
         </Link>
-      ))}
-      <button 
-        className="theme-toggle" 
-        onClick={toggleDarkMode}
-        aria-label="Toggle dark mode"
-      >
-        {isDarkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
-      </button>
+        <Link to="/get-plugged-in" className={location.pathname === '/get-plugged-in' ? 'nav-link active' : 'nav-link'}>
+          Get Plugged In
+        </Link>
+        <Link to="/resources" className={location.pathname === '/resources' ? 'nav-link active' : 'nav-link'}>
+          Resources
+        </Link>
+        <Link to="/calendar" className={location.pathname === '/calendar' ? 'nav-link active' : 'nav-link'}>
+          Calendar
+        </Link>
+        <Link to="/partnerships" className={location.pathname === '/partnerships' ? 'nav-link active' : 'nav-link'}>
+          Partnerships
+        </Link>
+        <button 
+          className="theme-toggle" 
+          onClick={toggleDarkMode}
+          aria-label="Toggle dark mode"
+        >
+          {isDarkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
+        </button>
+      </div>
     </nav>
   );
 }

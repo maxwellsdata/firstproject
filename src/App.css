@@ -1158,63 +1158,129 @@ body {
   padding: 2rem;
 }
 
-.resources-section {
+.resources-title {
+  color: #1e3a5f;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
   margin-bottom: 3rem;
 }
 
-.resources-section h2 {
+.primary-resources {
+  margin-bottom: 4rem;
+}
+
+.primary-resources h2 {
   color: #1e3a5f;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+/* Current Study Section */
+.current-study {
+  background-color: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.current-study h3 {
+  color: #1e3a5f;
+  font-size: 1.8rem;
+  font-weight: 600;
   margin-bottom: 1.5rem;
-  font-size: 1.75rem;
 }
 
-.resource-cards {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.resource-card {
-  background-color: var(--card-bg);
-  border: 1px solid var(--card-border);
-  box-shadow: var(--card-shadow);
-  border-radius: 15px;
-  padding: 1.5rem;
-}
-
-.resource-card h3 {
-  color: #1e3a5f;
-  margin: 0 0 1rem 0;
-  font-size: 1.25rem;
-}
-
-.resource-card p {
+.current-study p {
   color: #4a5568;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+/* Reading Schedule */
+.reading-schedule {
+  margin-top: 2rem;
+}
+
+.reading-schedule h3 {
+  color: #1e3a5f;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
   margin-bottom: 1.5rem;
-  line-height: 1.6;
 }
 
-.resource-link {
-  display: inline-block;
-  background: #1e3a5f;
-  color: white;
-  padding: 0.8rem 1.5rem;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
+.schedule-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
 }
 
-.resource-link:hover {
-  background: #2a507a;
+.schedule-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive adjustments */
+.schedule-date {
+  color: #1e3a5f;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.schedule-reading {
+  color: #4a5568;
+  font-size: 1rem;
+}
+
+/* Dark Mode Styles */
+body.dark-mode .current-study,
+body.dark-mode .schedule-card {
+  background-color: #2d2d2d;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode .current-study h3,
+body.dark-mode .schedule-date {
+  color: #ffffff;
+}
+
+body.dark-mode .current-study p,
+body.dark-mode .schedule-reading {
+  color: #e0e0e0;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .resources-container {
-    padding: 1rem;
+  .schedule-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
   
-  .resource-cards {
+  .resources-title {
+    font-size: 2.5rem;
+  }
+  
+  .current-study {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .schedule-grid {
     grid-template-columns: 1fr;
   }
 }

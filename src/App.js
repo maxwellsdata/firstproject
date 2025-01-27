@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import app from './firebase';
 import { ThemeProvider } from './context/ThemeContext';
@@ -18,14 +18,6 @@ function App() {
       <Router>
         <div className="App">
           <Navbar />
-          <nav className="navbar">
-            <Link to="/">Home</Link>
-            <Link to="/get-plugged-in">Get Plugged In</Link>
-            <Link to="/resources">Resources</Link>
-            <Link to="/calendar">Calendar</Link>
-            <Link to="/partnerships">Partnerships</Link>
-          </nav>
-
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/get-plugged-in" element={<GetPluggedIn />} />
